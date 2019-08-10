@@ -7,13 +7,15 @@ import {Courses} from './courses';
 import { HeartComponent } from './heart.component';
 import { ParentComponent } from './parent.component';
 import { ChildComponent } from './child.component';
+import { SwitchComponent } from './switch.component';
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     HeartComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule
