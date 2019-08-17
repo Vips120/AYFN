@@ -8,6 +8,13 @@ import { HeartComponent } from './heart.component';
 import { ParentComponent } from './parent.component';
 import { ChildComponent } from './child.component';
 import { SwitchComponent } from './switch.component';
+import { UserRecordComponent } from './userrecord.component';
+import { CurrentUserComponent } from './currentuser.record';
+import { UserDirective } from './user.directives';
+import { CustComponent } from './cust.component';
+import { Custpipe } from './cust.pipes';
+import { TemplateformComponent } from './templateform/templateform.component';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,10 +22,17 @@ import { SwitchComponent } from './switch.component';
     HeartComponent,
     ParentComponent,
     ChildComponent,
-    SwitchComponent
+    SwitchComponent,
+    UserRecordComponent,
+    CurrentUserComponent,
+    UserDirective,
+    CustComponent,
+    Custpipe,
+    TemplateformComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [Courses],
   bootstrap: [AppComponent]
