@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+                <form [formGroup]="userForm" (ngSubmit)="Save(userForm.value)"> 
+                    <div class="form-group">
+                            <input type="text" class="form-control" 
+                            formControlName="username"
+                            placeholder="enter username"
+                            [class.is-valid] = "userForm.controls.username.valid"
+                            [class.is-invalid]="!userForm.controls.username.valid
+                            && submitted
+                           "
+                            >
+                            <div class = "valid-feedback">awesome.....:)</div>
+                            <div class="invalid-feedback">Please fill out this field.:(</div>
+
+
+<!-- <div class="alert alert-danger"
+*ngIf="userForm.controls.username.hasError('required')
+ && userForm.controls.username.touched
+"
+>
+username is required*
+</div>
+<div class="alert alert-danger"
+*ngIf="userForm.controls.username.hasError('minlength')
+ && userForm.controls.username.touched
+"
+>
+username must be a 5 characters*
+</div> -->
+
+
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" 
+                        formControlName="password"
+                      [class.is-valid]="userForm.controls.password.valid"  
+                      [class.is-invalid]="!userForm.controls.password.valid &&
+                      submitted
+                      "
+                        placeholder="enter password">
+                        <div class = "valid-feedback">awesome.....:)</div>
+                        <div class="invalid-feedback">Please fill out this field.:(</div>
+
+                </div>
+                <div class="form-group">
+                    <input type="email" 
+                    formControlName="email"
+                    class="form-control" placeholder="enter email"
+                    [class.is-valid]="userForm.controls.email.valid"  
+                    [class.is-invalid]="!userForm.controls.email.valid &&
+                    submitted
+                    "
+                    >
+                    <div class = "valid-feedback">awesome.....:)</div>
+                    <div class="invalid-feedback">Please fill out this field.:(</div>
+
+            </div>
+            <button type="submit" class="btn btn-primary"
+            >submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

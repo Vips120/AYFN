@@ -14,7 +14,16 @@ import { UserDirective } from './user.directives';
 import { CustComponent } from './cust.component';
 import { Custpipe } from './cust.pipes';
 import { TemplateformComponent } from './templateform/templateform.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import {RouterModule} from '@angular/router';
+import {routes} from './routes';
+import { About1Component } from './about1/about1.component';
+import { About2Component } from './about2/about2.component';
+import { ProductComponent } from './product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +37,20 @@ import {FormsModule} from '@angular/forms';
     UserDirective,
     CustComponent,
     Custpipe,
-    TemplateformComponent
+    TemplateformComponent,
+    ReactiveformComponent,
+    NavigationComponent,
+    HomeComponent,
+    AboutComponent,
+    About1Component,
+    About2Component,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [Courses],
   bootstrap: [AppComponent]
