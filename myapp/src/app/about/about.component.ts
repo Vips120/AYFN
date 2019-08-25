@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,ElementRef } from '@angular/core';
+import {fromEvent} from 'rxjs';
+import * as opt from 'rxjs/operators';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -19,9 +20,18 @@ export class AboutComponent implements OnInit {
     name:'product3'
   }
   ]
-  constructor() { }
+  constructor(private el:ElementRef) { }
 
   ngOnInit() {
+    let search = this.el.nativeElement.querySelector("#search");
+     let observe = fromEvent(search,'keyup')
+                     .pipe(opt.map((e:any) => e.target.value),
+                           opt.filter(data => data.length >=4),
+                           opt.debounceTime(2000)
+                     )
+     ;
+     observe
+     .subscribe(item => console.log(item));
   }
 
 }
