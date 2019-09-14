@@ -30,5 +30,9 @@ export const routes:Route[] = [
  {
      path:'product/:id',
      component:ProductComponent
+ },
+ {
+     path:'contact',
+     loadChildren:'./contact/contact.module#ContactModule'
  }
 ]
