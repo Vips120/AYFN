@@ -29,7 +29,7 @@ export class UserDirective {
  @HostListener('mouseover') onmouseover() {
     console.log(this.el.nativeElement); 
     let ko = this.el.nativeElement.querySelector('.formBuilder');
-     
+     console.log(ko);
      this.RE.setElementStyle(ko, 'display', 'block');
  }
  @HostListener('mouseout') onmouseout() {

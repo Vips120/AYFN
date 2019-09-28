@@ -1,1 +1,41 @@
 <p>contact works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+                <form [formGroup]="userLogin" (ngSubmit)="Save(userLogin.value)">
+                   
+                   <div formGroupName="UserLogin">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="enter username"
+                          formControlName="UserName"
+                        >
+                        <div class="alert alert-danger"
+                        *ngIf="!userLogin.controls.UserLogin.controls.UserName.valid"
+                        >
+                            username is required*
+                        </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="enter password"
+                    formControlName="Password"
+                    >
+                    <div class="alert alert-danger"
+                    *ngIf="!userLogin.controls.UserLogin.controls.Password.valid"
+                    >
+                        password is required*
+                    </div>
+            </div>
+                   </div>
+                
+                    <div class="form-group">
+                        <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
