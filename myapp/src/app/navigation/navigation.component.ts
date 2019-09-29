@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginServices } from '../shared/services/login.services';
+import { IuserLogin } from '../shared/model/login';
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-
-  constructor() { }
+  public user:IuserLogin;
+// public user = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private loginservices: LoginServices) { }
 
   ngOnInit() {
+    // console.log(this.user);
+    this.loginservices.loggedInUser.subscribe(x => {
+      console.log(x);
+      this.user = x;
+    })
+  };
+
+  userLogout(){
+this.loginservices.Userlogout();
   }
 
 }

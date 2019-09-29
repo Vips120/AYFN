@@ -1,5 +1,11 @@
 export interface IuserLogin {
-    UserLogin:{
+    UserIdentity?:string;
+    FirstName?:string;
+    LastName?:string;
+    MobileNo?:number;
+    EmailId?:string;
+    Error?:string;
+    UserLogin?:{
         Username:string;
         Password:string;
     }
